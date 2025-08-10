@@ -1,19 +1,19 @@
 # Heart Disease Prediction API
 ---
 A FastAPI app that predicts heart disease using machine learning models (Logistic Regression and Random Forest). The app is Dockerized for easy deployment.
-### Features
+## Features
 ---
 - Predict heart disease from clinical data.
 - REST API with `/health`, `/info`, and `/predict` endpoints.
 - Swagger UI available at `/docs`.
 - Docker and Docker Compose support.
-### Setup
+## Setup
 ---
 #### Requirements
 - Python 3.10+ (if running locally)
 - Docker and Docker Compose (optional)
 #### Run Locally with Python
-```bash
+```
 python -m venv venv
 source venv/bin/activate      # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
@@ -25,7 +25,7 @@ Visit http://localhost:8000/docs to explore the API.
 docker-compose up --build
 ```
 Visit http://localhost:8000/docs.
-### Usage
+## Usage
 ---
 #### Health Check
 ```
