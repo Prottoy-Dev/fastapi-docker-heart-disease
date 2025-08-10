@@ -1,16 +1,16 @@
 # Heart Disease Prediction API
-
+---
 A FastAPI app that predicts heart disease using machine learning models (Logistic Regression and Random Forest). The app is Dockerized for easy deployment.
 
 ## Features
-
+---
 - Predict heart disease from clinical data.
 - REST API with `/health`, `/info`, and `/predict` endpoints.
 - Swagger UI available at `/docs`.
 - Docker and Docker Compose support.
 
 ## Setup
-
+---
 ### Requirements
 
 - Python 3.10+ (if running locally)
@@ -23,22 +23,23 @@ python -m venv venv
 source venv/bin/activate      # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 uvicorn app.main:app --reload
-
+```
 Visit http://localhost:8000/docs to explore the API.
 
-# Run with Docker
+### Run with Docker
+```
 docker-compose up --build
-
+```
 Visit http://localhost:8000/docs.
 
-# Usage
-
-## Health Check
-
+## Usage
+---
+### Health Check
+```
 curl http://localhost:8000/health
-
+```
 ### Predict with curl
-
+```
 curl -X POST "http://localhost:8000/predict?model_type=logistic_regression" \
 -H "Content-Type: application/json" \
 -d '{"age":52,
@@ -55,9 +56,9 @@ curl -X POST "http://localhost:8000/predict?model_type=logistic_regression" \
 "ca":2,
 "thal":3
 }'
-
+```
 ### Predict with Python
-
+```
 import requests
 
 url = "http://localhost:8000/predict?model_type=logistic_regression"
@@ -84,5 +85,5 @@ if response.status_code == 200:
     print("Prediction:", response.json())
 else:
     print("Error:", response.status_code, response.text)
-
+```
 
